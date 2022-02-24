@@ -24,3 +24,4 @@ class Spices:
             self.motor.setDirection(180)
         }
         self.motor.setDirection(0)
+        
