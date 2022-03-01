@@ -7,13 +7,13 @@ class Motor:
 		self.fPWM = 50  # Hz (not higher with software PWM)
 		self.a = 10
 		self.b = 2
-		setup()
+		self.setup()
 		
 	def setup(self):
 		global pwm
 		GPIO.setmode(GPIO.BOARD)
 		GPIO.setup(self.gpio, GPIO.OUT)
-		pwm = GPIO.PWM(self.gpio, seld.fPWM)
+		pwm = GPIO.PWM(self.gpio, self.fPWM)
 		pwm.start(10)
 
 	def setDirection(self, direction):
@@ -21,5 +21,5 @@ class Motor:
 		duty = direction / 18 + self.b
 		GPIO.output(self.gpio,True)
 		pwm.ChangeDutyCycle(duty)
-		print "direction =", direction, "-> duty =", duty
+		#print "direction =" direction, "-> duty =", duty
 		time.sleep(1) # allow to settle

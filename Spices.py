@@ -1,4 +1,5 @@
 from LoadCell import *
+from Motor import *
 class Spices:
     def __init__(self, motor, loadcell, spice):
         self.motor = motor
@@ -19,9 +20,11 @@ class Spices:
                 dispense_amount = amount * self.tablespoon
             case "teaspoon":
                 dispense_amount = amount * self.teaspoon
+            case "grams":
+                dispense_amount = amount
         
-        while(self.loadcell.get_weight(5)<dispense_amount){
+        while(self.loadcell.get_weight(5)<dispense_amount):
             self.motor.setDirection(180)
-        }
+
         self.motor.setDirection(0)
-        
+
