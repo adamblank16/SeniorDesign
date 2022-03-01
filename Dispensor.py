@@ -67,7 +67,7 @@ class Motor:
 		duty = direction / 18 + self.b
 		GPIO.output(self.gpio,True)
 		pwm.ChangeDutyCycle(duty)
-		print "direction =", direction, "-> duty =", duty
+		#print "direction =", direction, "-> duty =", duty
 		time.sleep(1) # allow to settle
 
 
