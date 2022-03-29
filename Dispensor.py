@@ -41,7 +41,7 @@ class LoadCell:
 			numList.append(hx.get_weight(5))
 		for i in numList:
 			total += i
-		referenceUnit = ((total/len(numList))/100)
+		referenceUnit = ((total/len(numList))/100.0)
 		
 	def readWeight(self):
 		print(hx.get_weight(5))
@@ -71,14 +71,15 @@ class Motor:
 		time.sleep(1) # allow to settle
 
 
-loadCell = LoadCell(5,6)
-motor = Motor(17)
+#loadCell = LoadCell(5,6)
+#motor = Motor(17)
+#while True:
+	#print(loadCell.readWeight())
+#motor.setDirection(0)
 
-motor.setDirection(0)
+#while(loadCell.readWeight() < 10):
+##	motor.setDirection(180)
 
-while(loadCell.readWeight() < 10):
-	motor.setDirection(180)
-
-motor.setDirection(0)
+#motor.setDirection(0)
 loadCell.cleanAndExit()
 
