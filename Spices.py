@@ -10,6 +10,10 @@ class Spices:
             self.tablespoon = 17.06
             self.teaspoon = 5.69
             self.motor = Motor(22)
+        if (self.spice == "pepper"):
+            self.tablespoon = 6.90
+            self.teaspoon = 2,30
+            self.motor = Motor(27)
         if (self.spice == "basil"):
             self.tablespoon = 1.26
             self.teaspoon = 0.42
